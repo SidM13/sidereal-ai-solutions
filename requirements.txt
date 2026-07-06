@@ -1,0 +1,10 @@
+requests
+pyautogui
+pyttsx3
+SpeechRecognition
+openai
+pygetwindow
+pymsgbox
+pyscreeze
+pytweening
+mouseinfo
