@@ -31,7 +31,9 @@ jobs:
           npm install --prefix client
       
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          cp client/build/index.html client/build/404.html
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
