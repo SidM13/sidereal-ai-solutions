@@ -2,6 +2,7 @@
   "name": "elite-founder-hub-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sidm13.github.io/sidereal-ai-solutions",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
