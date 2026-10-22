@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import '../styles/Resources.css';
 
@@ -17,11 +17,7 @@ function Resources({ token }) {
 
   const categories = ['funding', 'mentorship', 'tools', 'learning', 'events'];
 
-  useEffect(() => {
-    fetchResources();
-  }, [selectedCategory]);
-
-  const fetchResources = async () => {
+  const fetchResources = useCallback(async () => {
     try {
       setLoading(true);
       const url = selectedCategory 
@@ -34,7 +30,11 @@ function Resources({ token }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    fetchResources();
+  }, [fetchResources]);
 
   const handleFormChange = (e) => {
     setFormData({
